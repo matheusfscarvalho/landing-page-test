@@ -1,220 +1,666 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dra. Valéria Neves - Especialista em Tobas</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Consulta com a Dra. Valéria Neves, coloproctologista em Brasília-DF. Atendimento acolhedor para prevenção, diagnóstico e tratamento de condições do intestino, reto e ânus." />
+  <meta name="keywords" content="Coloproctologista em Brasília-DF, médica coloproctologista, consulta para hemorroidas, saúde intestinal, prevenção câncer de intestino, proctologista em Brasília-DF, tratamento de fissura anal, acompanhamento intestinal" />
+  <meta name="author" content="Dra. Valéria Neves" />
+  <meta property="og:title" content="Dra. Valéria Neves | Coloproctologista em Brasília-DF" />
+  <meta property="og:description" content="Atendimento acolhedor, discreto e individualizado para sua saúde intestinal." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0d5c62" />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <!-- Substitua [Cidade] pelo município de atendimento -->
+  <title>Dra. Valéria Neves | Coloproctologista em Brasília-DF</title>
+
+  <!--
+    INTEGRAÇÕES:
+    1. Cole o Google Tag Manager imediatamente após a abertura da tag <head>.
+    2. Cole o Google Analytics / Meta Pixel conforme as instruções das plataformas.
+    3. O rastreamento de cliques em WhatsApp usa data-track="whatsapp".
+  -->
+
+  <style>
+    :root {
+      --ink: #17343a;
+      --ink-soft: #466267;
+      --primary: #0d5c62;
+      --primary-dark: #07464b;
+      --primary-pale: #e8f3f1;
+      --sand: #f7f3ed;
+      --sand-deep: #efe5d8;
+      --terracotta: #b86f5b;
+      --line: #dce7e4;
+      --white: #ffffff;
+      --success: #196d56;
+      --shadow: 0 14px 42px rgba(23, 52, 58, .10);
+      --shadow-soft: 0 8px 28px rgba(23, 52, 58, .07);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.58;
+      text-rendering: optimizeLegibility;
+    }
+    body.menu-open { overflow: hidden; }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea, select { font: inherit; }
+    button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid #d49b66; outline-offset: 3px; }
+
+    .skip-link {
+      position: fixed; left: 16px; top: -60px; z-index: 100;
+      padding: 10px 14px; border-radius: 10px; background: var(--ink); color: #fff;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 16px; }
+
+    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    .section { padding: 96px 0; scroll-margin-top: 100px; }
+    .section-soft { background: var(--sand); }
+    .section-pale { background: var(--primary-pale); }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--primary); margin: 0 0 12px;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; border-radius: 4px; background: var(--terracotta); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.12; letter-spacing: -.025em; }
+    h1 { font-size: clamp(2.65rem, 5.2vw, 5rem); margin-bottom: 18px; max-width: 720px; }
+    h2 { font-size: clamp(2rem, 3.7vw, 3.35rem); margin-bottom: 18px; }
+    h3 { font-size: 1.28rem; margin-bottom: 9px; }
+    .lead { color: var(--ink-soft); font-size: clamp(1.02rem, 1.4vw, 1.17rem); max-width: 670px; }
+    .section-head { max-width: 740px; margin-bottom: 46px; }
+    .muted { color: var(--ink-soft); }
+    .small { font-size: .9rem; }
+    .notice {
+      display: flex; align-items: flex-start; gap: 10px; margin-top: 28px;
+      padding: 14px 16px; border-left: 3px solid var(--terracotta);
+      background: rgba(255,255,255,.56); color: var(--ink-soft); font-size: .9rem;
+    }
+
+    .site-header {
+      position: fixed; inset: 0 0 auto; z-index: 50;
+      background: rgba(255,255,255,.88); border-bottom: 1px solid rgba(220,231,228,.75);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 22px;
+    }
+    .brand { display: grid; line-height: 1.05; min-width: max-content; }
+    .brand strong { font-family: Georgia, "Times New Roman", serif; font-size: 1.22rem; }
+    .brand span { color: var(--primary); font-size: .73rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; margin-top: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 22px; font-size: .91rem; color: var(--ink-soft); font-weight: 650; }
+    .nav-links a:hover { color: var(--primary); }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--primary); padding: 8px; cursor: pointer; }
+    .menu-toggle svg { width: 28px; height: 28px; display: block; }
+    .nav-cta { padding: 12px 17px; font-size: .87rem; }
+
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 51px; padding: 14px 22px; border: 1px solid transparent;
+      border-radius: 999px; font-weight: 760; font-size: .95rem; cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+    .button-primary { background: var(--primary); color: #fff; }
+    .button-primary:hover { background: var(--primary-dark); }
+    .button-outline { border-color: var(--primary); color: var(--primary); background: #fff; }
+    .button-light { background: #fff; color: var(--primary-dark); }
+    .button-whatsapp { background: #1b7b62; color: #fff; }
+    .button svg { width: 19px; height: 19px; fill: currentColor; flex: 0 0 auto; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+
+    .hero {
+      position: relative; overflow: hidden; padding: 155px 0 76px; background:
+      radial-gradient(circle at 83% 23%, rgba(230, 204, 174, .46), transparent 23rem),
+      radial-gradient(circle at 8% 88%, rgba(181, 215, 205, .48), transparent 24rem),
+      linear-gradient(115deg, #fcfdfc 0%, #f7fbfa 100%);
+    }
+    .hero::before {
+      content:""; position:absolute; width: 420px; height: 420px; right: -170px; bottom: -180px;
+      border: 1px solid rgba(13,92,98,.13); border-radius: 50%;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: clamp(36px, 6vw, 90px); position: relative; }
+    .hero-title-line { display: block; color: var(--primary); font-size: clamp(1.24rem, 2.3vw, 1.75rem); margin-bottom: 9px; letter-spacing: -.02em; }
+    .hero-photo { position: relative; min-height: 535px; }
+    .photo-frame {
+      height: 100%; min-height: 535px; overflow: hidden; position: relative; border-radius: 150px 28px 28px 28px;
+      box-shadow: var(--shadow); background:
+      linear-gradient(145deg, rgba(9,74,79,.05), rgba(255,255,255,.7)),
+      linear-gradient(135deg, #d6e5e2 0%, #fbf8f2 54%, #dec6ad 100%);
+    }
+    .photo-frame::after {
+      content:"FOTO PROFISSIONAL DA DRA. VALÉRIA"; display:flex; align-items:flex-end; justify-content:center; text-align:center;
+      position:absolute; inset:0; padding:32px; color:rgba(23,52,58,.56); font-size:.72rem; letter-spacing:.12em; font-weight:800;
+      background:
+        radial-gradient(ellipse 39% 42% at 50% 44%, rgba(255,255,255,.8) 0 18%, transparent 19%),
+        radial-gradient(ellipse 52% 68% at 50% 71%, rgba(13,92,98,.12) 0 34%, transparent 35%);
+    }
+    /* Substitua o bloco .photo-frame acima por uma imagem real:
+      <img src="images/dra-valeria-neves.jpg" alt="Dra. Valéria Neves em seu consultório">
+    */
+    .hero-note {
+      position: absolute; left: -38px; bottom: 42px; width: min(265px, 74%); padding: 18px 19px;
+      background: rgba(255,255,255,.94); border: 1px solid rgba(220,231,228,.9); border-radius: 16px; box-shadow: var(--shadow-soft);
+    }
+    .hero-note strong { display:block; margin-bottom:3px; color:var(--primary); }
+    .hero-note span { color:var(--ink-soft); font-size:.87rem; }
+    .trust-list { display:grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin: 35px 0 0; padding:0; list-style:none; }
+    .trust-item { display:flex; align-items:center; gap:9px; color:var(--ink-soft); font-size:.87rem; font-weight:650; }
+    .icon-dot { width:31px; height:31px; display:grid; place-items:center; flex:0 0 auto; border-radius:50%; background:var(--primary-pale); color:var(--primary); }
+    .icon-dot svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; }
+
+    .symptoms-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:15px; }
+    .symptom { padding:18px 17px; display:flex; align-items:center; gap:12px; background:#fff; border:1px solid var(--line); border-radius:var(--radius-sm); box-shadow:0 3px 11px rgba(23,52,58,.025); font-weight:640; font-size:.93rem; }
+    .symptom .icon-dot { width:28px; height:28px; background:var(--sand); color:var(--terracotta); }
+    .symptom .icon-dot svg { width:15px; height:15px; }
+
+    .service-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+    .service-card { padding:25px 23px; border:1px solid var(--line); border-radius:var(--radius-md); background:#fff; transition: transform .2s ease, box-shadow .2s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow:var(--shadow-soft); }
+    .service-icon { display:grid; width:43px; height:43px; place-items:center; border-radius:13px; color:var(--primary); background:var(--primary-pale); margin-bottom:20px; }
+    .service-icon svg { width:23px; height:23px; stroke:currentColor; fill:none; stroke-width:1.8; }
+    .service-card p { margin:0; color:var(--ink-soft); font-size:.93rem; }
+
+    .about-grid { display:grid; grid-template-columns: .84fr 1.16fr; align-items:center; gap:clamp(36px, 6vw, 90px); }
+    .about-photo { min-height:500px; border-radius:28px 130px 28px 28px; overflow:hidden; background:linear-gradient(145deg, #d7e6e3, #fbf7f0 52%, #dbc0a9); box-shadow:var(--shadow); position:relative; }
+    .about-photo::after { content:"INSERIR FOTO DA MÉDICA OU DO CONSULTÓRIO"; position:absolute; inset:0; display:grid; place-items:end center; padding:28px; text-align:center; color:rgba(23,52,58,.58); font-size:.7rem; font-weight:800; letter-spacing:.1em; }
+    .credentials { display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; margin:28px 0; }
+    .credential { padding:15px; border:1px solid var(--line); border-radius:12px; background:#fff; }
+    .credential strong { display:block; color:var(--primary); font-size:.78rem; letter-spacing:.07em; text-transform:uppercase; margin-bottom:3px; }
+    .credential span { font-size:.91rem; color:var(--ink-soft); }
+    .quote { margin:26px 0 0; padding:21px 23px; border-left:3px solid var(--terracotta); background:var(--sand); color:var(--ink); font-family:Georgia,serif; font-size:1.13rem; }
+
+    .steps { display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; counter-reset:step; }
+    .step { position:relative; padding:30px 27px 26px; border-radius:var(--radius-md); background:#fff; border:1px solid var(--line); }
+    .step-number { width:44px; height:44px; display:grid; place-items:center; border-radius:50%; color:#fff; background:var(--primary); font-family:Georgia,serif; font-size:1.25rem; margin-bottom:20px; }
+    .step p { margin:0; color:var(--ink-soft); font-size:.94rem; }
+
+    .faq-wrap { max-width:860px; }
+    .faq { border-top:1px solid var(--line); }
+    .faq:last-child { border-bottom:1px solid var(--line); }
+    .faq button { width:100%; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 2px; border:0; background:transparent; color:var(--ink); text-align:left; font-weight:760; font-size:1rem; cursor:pointer; }
+    .faq .plus { position:relative; width:23px; height:23px; flex:0 0 auto; border-radius:50%; background:var(--primary-pale); }
+    .faq .plus::before, .faq .plus::after { content:""; position:absolute; left:6px; right:6px; top:11px; height:1.5px; border-radius:3px; background:var(--primary); transition:transform .22s ease; }
+    .faq .plus::after { transform:rotate(90deg); }
+    .faq button[aria-expanded="true"] .plus::after { transform:rotate(0); }
+    .faq-answer { display:grid; grid-template-rows:0fr; transition:grid-template-rows .25s ease; }
+    .faq-answer > div { overflow:hidden; }
+    .faq-answer p { margin:0; padding:0 42px 22px 2px; color:var(--ink-soft); }
+    .faq button[aria-expanded="true"] + .faq-answer { grid-template-rows:1fr; }
+
+    .testimonials-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+    .testimonial { min-height:210px; padding:27px; border-radius:var(--radius-md); background:#fff; border:1px dashed #c9d8d4; }
+    .testimonial-mark { color:var(--terracotta); font-family:Georgia,serif; font-size:3rem; line-height:.5; }
+    .testimonial p { margin:21px 0 15px; color:var(--ink-soft); font-size:.94rem; }
+    .testimonial strong { font-size:.85rem; color:var(--primary); }
+    .admin-note { margin-top:22px; color:var(--ink-soft); font-size:.85rem; font-style:italic; }
+
+    .booking { background:var(--primary-dark); color:#fff; overflow:hidden; position:relative; }
+    .booking::after { content:""; position:absolute; width:460px; height:460px; border:1px solid rgba(255,255,255,.15); border-radius:50%; right:-180px; top:-190px; }
+    .booking-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(32px, 6vw, 78px); align-items:center; position:relative; z-index:1; }
+    .booking .eyebrow { color:#bde1da; }
+    .booking .eyebrow::before { background:#e0a57e; }
+    .booking h2 { color:#fff; }
+    .booking .lead { color:#d5e7e3; }
+    .booking-note { margin-top:23px; color:#b9d4ce; font-size:.88rem; }
+    .form-card { padding:27px; border-radius:var(--radius-md); background:#fff; color:var(--ink); box-shadow:0 12px 34px rgba(0,0,0,.18); }
+    .form-card h3 { margin-bottom:18px; }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .field { display:grid; gap:6px; }
+    .field.full { grid-column:1 / -1; }
+    label { font-size:.83rem; font-weight:760; color:var(--ink); }
+    input, textarea, select { width:100%; border:1px solid #cfddda; border-radius:10px; padding:12px 13px; color:var(--ink); background:#fff; }
+    textarea { min-height:90px; resize:vertical; }
+    input:focus, textarea:focus, select:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(13,92,98,.14); }
+    .consent { grid-column:1 / -1; display:flex; align-items:flex-start; gap:9px; color:var(--ink-soft); font-size:.8rem; line-height:1.45; }
+    .consent input { width:17px; height:17px; margin-top:2px; accent-color:var(--primary); }
+    .form-status { min-height:20px; margin:12px 0 0; color:var(--success); font-size:.85rem; font-weight:650; }
+    .form-status.error { color:#a13e32; }
+
+    footer { background:#12383d; color:#d5e7e3; padding:56px 0 24px; }
+    .footer-grid { display:grid; grid-template-columns:1.2fr .85fr .85fr .9fr; gap:31px; }
+    .footer-brand strong { display:block; color:#fff; font-family:Georgia,serif; font-size:1.3rem; margin-bottom:7px; }
+    .footer-brand p { margin:0; max-width:270px; font-size:.88rem; color:#b8d1cc; }
+    .footer-title { color:#fff; font-size:.83rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; margin:0 0 12px; }
+    .footer-list { list-style:none; padding:0; margin:0; display:grid; gap:8px; font-size:.88rem; }
+    .footer-list a:hover { color:#fff; text-decoration:underline; text-underline-offset:3px; }
+    .footer-bottom { margin-top:40px; padding-top:20px; border-top:1px solid rgba(213,231,227,.18); display:flex; justify-content:space-between; align-items:flex-start; gap:17px; font-size:.78rem; color:#a9c4be; }
+    .footer-bottom p { margin:0; max-width:650px; }
+
+    .whatsapp-float {
+      position:fixed; right:18px; bottom:18px; z-index:40; display:flex; align-items:center; gap:9px;
+      padding:13px 17px; border-radius:999px; background:#1b7b62; color:#fff; box-shadow:0 10px 26px rgba(10,74,54,.28);
+      font-size:.88rem; font-weight:800; transition:transform .2s ease;
+    }
+    .whatsapp-float:hover { transform:translateY(-3px); }
+    .whatsapp-float svg { width:21px; height:21px; fill:currentColor; }
+
+    @media (max-width: 980px) {
+      .nav-links { gap:13px; font-size:.84rem; }
+      .nav-cta { display:none; }
+      .hero-grid, .about-grid, .booking-grid { grid-template-columns:1fr; }
+      .hero-content { max-width:720px; }
+      .hero-photo { min-height:460px; max-width:610px; width:92%; justify-self:end; }
+      .photo-frame { min-height:460px; }
+      .about-photo { min-height:390px; max-width:560px; }
+      .service-grid { grid-template-columns:repeat(2,1fr); }
+      .footer-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width: 720px) {
+      .container { width:min(var(--max), calc(100% - 32px)); }
+      .section { padding:72px 0; }
+      .site-header .nav { min-height:69px; }
+      .menu-toggle { display:block; }
+      .nav-links {
+        display:none; position:fixed; left:0; right:0; top:69px; padding:23px 18px 27px;
+        background:#fff; box-shadow:0 16px 28px rgba(23,52,58,.12); flex-direction:column; align-items:stretch; gap:0;
+      }
+      .nav-links.open { display:flex; }
+      .nav-links a { padding:13px 8px; border-bottom:1px solid var(--line); font-size:.96rem; }
+      .nav-links .mobile-nav-cta { display:inline-flex; margin-top:17px; }
+      .hero { padding:123px 0 60px; }
+      h1 { font-size:clamp(2.3rem, 12vw, 3.45rem); }
+      .hero-photo { min-height:385px; width:100%; }
+      .photo-frame { min-height:385px; border-radius:92px 23px 23px 23px; }
+      .hero-note { left:13px; bottom:18px; }
+      .trust-list { grid-template-columns:1fr; gap:9px; }
+      .symptoms-grid, .service-grid, .steps, .testimonials-grid { grid-template-columns:1fr; }
+      .service-card { padding:22px; }
+      .credentials, .form-grid { grid-template-columns:1fr; }
+      .field.full { grid-column:auto; }
+      .about-photo { min-height:335px; border-radius:25px 92px 25px 25px; }
+      .footer-grid { grid-template-columns:1fr; gap:27px; }
+      .footer-bottom { flex-direction:column; }
+      .whatsapp-float { padding:14px; right:14px; bottom:14px; }
+      .whatsapp-float span { display:none; }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript): cole aqui, após a abertura do body -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="hero">
-  <div class="hero-content">
-    <h1>Consulta médica rápida<br>sem fila e sem burocracia</h1>
-    <p>Atendimento humanizado em Brasília com agendamento imediato.</p>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Dra. Valéria Neves — início">
+        <strong>Dra. Valéria Neves</strong>
+        <span>Coloproctologia</span>
+      </a>
 
-    <a class="btn" target="_blank"
-      href="https://wa.me/5561999999999?text=Olá%2C+quero+agendar+minha+consulta">
-      Agendar Consulta
-    </a>
-  </div>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6.5h18v1.8H3zm0 4.8h18v1.8H3zm0 4.8h18v1.8H3z"/></svg>
+      </button>
 
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=600&q=80">
-  </div>
-</header>
+      <nav id="nav-menu" class="nav-links" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#atendimento">Atendimento</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
+        <a class="button button-primary mobile-nav-cta" href="#agendamento">Agendar consulta</a>
+      </nav>
 
+      <a class="button button-primary nav-cta" href="#agendamento">Agendar consulta</a>
+    </div>
+  </header>
 
-<section class="section">
-  <div class="glass">
-    <div class="stats">
-      <div class="stat">
-        <h3>+1000</h3>
-        <p>Pacientes atendidos</p>
+  <main id="conteudo">
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Atendimento em [Cidade/UF]</p>
+          <h1 id="hero-title">
+            <span class="hero-title-line">Dra. Valéria Neves</span>
+            Coloproctologista
+          </h1>
+          <p class="lead">Cuidar da saúde intestinal também é cuidar da sua qualidade de vida.</p>
+          <p class="lead">Atendimento humanizado, discreto e individualizado para prevenção, diagnóstico e tratamento de doenças do intestino, reto e ânus.</p>
+
+          <div class="button-row">
+            <a class="button button-primary" href="#agendamento">Agendar consulta</a>
+            <!-- TROCAR 55XXXXXXXXXXX pelo telefone com DDI e DDD, apenas números -->
+            <a class="button button-outline" data-track="whatsapp" target="_blank" rel="noopener" href="https://wa.me/5561991641974?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Valéria%20Neves.">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2A9.85 9.85 0 0 0 3.8 17.27L2 22l4.87-1.75A9.96 9.96 0 1 0 12.04 2Zm0 17.94a8.05 8.05 0 0 1-4.1-1.12l-.3-.18-2.9 1.04 1.05-2.82-.2-.3a8.04 8.04 0 1 1 6.45 3.38Zm4.42-6.04c-.24-.12-1.41-.7-1.63-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.92-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.02-.37.1-.49.1-.1.24-.28.35-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.4l-.46-.01c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.65.58.25 1.02.4 1.37.52.58.18 1.1.16 1.52.1.46-.07 1.4-.58 1.6-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+              Falar pelo WhatsApp
+            </a>
+          </div>
+
+          <ul class="trust-list" aria-label="Diferenciais do atendimento">
+            <li class="trust-item"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M12 20s7-3.8 7-10V5.5L12 3 5 5.5V10c0 6.2 7 10 7 10Z"/><path d="m9 11.8 2 2 4-4"/></svg></span>Atendimento acolhedor</li>
+            <li class="trust-item"><span class="icon-dot"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>Privacidade e discrição</li>
+            <li class="trust-item"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M12 21s8-4.2 8-11V5l-8-3-8 3v5c0 6.8 8 11 8 11Z"/><path d="M12 8v5m-2.5-2.5h5"/></svg></span>Avaliação individualizada</li>
+          </ul>
+        </div>
+
+        <div class="hero-photo" aria-label="Espaço reservado para foto profissional da médica">
+          <div class="photo-frame" role="img" aria-label="Substituir por foto profissional da Dra. Valéria Neves em consultório"></div>
+          <div class="hero-note">
+            <strong>Escuta, clareza e cuidado</strong>
+            <span>Um espaço seguro para conversar sobre sua saúde intestinal.</span>
+          </div>
+        </div>
       </div>
-      <div class="stat">
-        <h3>+10 anos</h3>
-        <p>de experiência</p>
+    </section>
+
+    <section class="section section-soft" aria-labelledby="atencao-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Prevenção e cuidado</p>
+          <h2 id="atencao-title">Sua saúde intestinal merece atenção</h2>
+          <p class="lead">A coloproctologia cuida da prevenção, diagnóstico e tratamento de condições relacionadas ao intestino grosso, reto e ânus.</p>
+          <p class="muted">Alguns sintomas podem parecer simples ou constrangedores, mas merecem uma avaliação especializada. Buscar atendimento precocemente contribui para diagnósticos mais precisos e tratamentos mais seguros.</p>
+        </div>
+
+        <div class="symptoms-grid">
+          <div class="symptom"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="8"/></svg></span>Dor ou desconforto ao evacuar</div>
+          <div class="symptom"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8h14M5 16h14"/></svg></span>Sangramento nas fezes</div>
+          <div class="symptom"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg></span>Hemorroidas</div>
+          <div class="symptom"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0c0 4-3.2 7-7 7s-7-3-7-7Z"/></svg></span>Constipação frequente</div>
+          <div class="symptom"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M4 12c2-5 5-5 8 0s6 5 8 0"/></svg></span>Diarreia persistente</div>
+          <div class="symptom"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M5 6h14M5 12h10M5 18h14"/></svg></span>Alterações no hábito intestinal</div>
+          <div class="symptom"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M4 13c1-5 4-7 8-7s7 2 8 7c-2 3-4 5-8 5s-6-2-8-5Z"/></svg></span>Dor abdominal recorrente</div>
+          <div class="symptom"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M4 20V9m5 11V4m5 16v-8m5 8V7"/></svg></span>Histórico familiar de câncer de intestino</div>
+          <div class="symptom"><span class="icon-dot"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg></span>Necessidade de acompanhamento preventivo</div>
+        </div>
+
+        <p class="notice"><span aria-hidden="true">ℹ</span> Este conteúdo é informativo e não substitui uma avaliação médica.</p>
       </div>
-      <div class="stat">
-        <h3>100%</h3>
-        <p>Atendimento humanizado</p>
+    </section>
+
+    <section id="especialidades" class="section" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Áreas de atendimento</p>
+          <h2 id="services-title">Cuidado especializado, com atenção ao que importa para você</h2>
+          <p class="lead">Cada consulta parte de uma avaliação cuidadosa, respeitando seu histórico, suas dúvidas e suas necessidades individuais.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 21c.7-4.2 3.1-6 7-6s6.3 1.8 7 6"/></svg></span><h3>Consulta coloproctológica</h3><p>Avaliação individualizada para compreender sintomas, histórico e necessidades de cuidado.</p></article>
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 21s8-4.2 8-11V5l-8-3-8 3v5c0 6.8 8 11 8 11Z"/><path d="M12 8v5m-2.5-2.5h5"/></svg></span><h3>Prevenção e rastreamento</h3><p>Orientação para prevenção e rastreamento do câncer colorretal, conforme avaliação médica.</p></article>
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg></span><h3>Hemorroidas</h3><p>Investigação e orientação para sintomas relacionados a hemorroidas, com abordagem adequada ao caso.</p></article>
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 12c2-5 5-5 8 0s6 5 8 0"/></svg></span><h3>Fissuras anais</h3><p>Avaliação cuidadosa de dor e desconforto, com explicações claras sobre possibilidades de cuidado.</p></article>
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 19 19 5M7 5h12v12"/></svg></span><h3>Fístulas e abscessos</h3><p>Investigação especializada e definição dos próximos passos conforme as características de cada quadro.</p></article>
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg></span><h3>Doenças inflamatórias intestinais</h3><p>Acompanhamento clínico e orientação para condições intestinais que exigem atenção contínua.</p></article>
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 12a7 7 0 0 1 14 0c0 4-3.2 7-7 7s-7-3-7-7Z"/></svg></span><h3>Constipação e alterações intestinais</h3><p>Escuta e avaliação de mudanças persistentes do hábito intestinal ou desconfortos recorrentes.</p></article>
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 12h18M12 3v18"/></svg></span><h3>Avaliação de sangramentos</h3><p>Investigação de sangramentos com atenção à história clínica e às indicações de exames, quando necessários.</p></article>
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/><circle cx="12" cy="12" r="8"/></svg></span><h3>Acompanhamento pós-operatório</h3><p>Orientação e acompanhamento após procedimentos, respeitando o planejamento assistencial individual.</p></article>
+          <article class="service-card"><span class="service-icon"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span><h3>Exames e procedimentos</h3><p>Orientação objetiva para preparo, indicação e próximos passos relacionados a exames e procedimentos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section section-pale" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-photo" role="img" aria-label="Espaço reservado para foto profissional da Dra. Valéria Neves"></div>
+
+        <div>
+          <p class="eyebrow">Sobre a médica</p>
+          <h2 id="about-title">Conheça a Dra. Valéria Neves</h2>
+          <p class="lead">A Dra. Valéria Neves é médica coloproctologista, dedicada a oferecer um atendimento ético, atento e individualizado.</p>
+          <p class="muted">Seu trabalho é pautado pela escuta, pelo acolhimento e pela orientação clara em todas as etapas do cuidado.</p>
+
+          <div class="credentials" aria-label="Informações profissionais da médica">
+            <div class="credential"><strong>CRM</strong><span>[Inserir CRM/UF]</span></div>
+            <div class="credential"><strong>RQE</strong><span>[Inserir RQE]</span></div>
+            <div class="credential"><strong>Formação</strong><span>[Inserir formação acadêmica]</span></div>
+            <div class="credential"><strong>Especializações</strong><span>[Inserir especializações]</span></div>
+            <div class="credential"><strong>Instituições</strong><span>[Hospitais/instituições de atuação]</span></div>
+            <div class="credential"><strong>Atendimento</strong><span>[Cidade/Estado]</span></div>
+          </div>
+
+          <p class="quote">“Cada paciente é atendido com respeito, privacidade e atenção às suas necessidades individuais.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="atendimento" class="section" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Atendimento</p>
+          <h2 id="steps-title">Como funciona o atendimento?</h2>
+          <p class="lead">Um processo simples, acolhedor e focado em oferecer orientação clara desde o primeiro contato.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><span class="step-number">1</span><h3>Agendamento</h3><p>Entre em contato pelo WhatsApp ou formulário e escolha o melhor horário.</p></article>
+          <article class="step"><span class="step-number">2</span><h3>Consulta individualizada</h3><p>A consulta é conduzida com escuta, discrição e avaliação cuidadosa do seu histórico e sintomas.</p></article>
+          <article class="step"><span class="step-number">3</span><h3>Orientação e acompanhamento</h3><p>Você recebe orientações claras sobre exames, cuidados, tratamentos e próximos passos, quando necessários.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="duvidas" class="section section-soft" aria-labelledby="faq-title">
+      <div class="container faq-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2 id="faq-title">Informação com clareza e acolhimento</h2>
+        </div>
+
+        <div class="faq">
+          <button type="button" aria-expanded="false"><span>Quando devo procurar uma coloproctologista?</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="faq-answer"><div><p>Quando houver sintomas como dor, sangramento, alterações persistentes do hábito intestinal, desconforto ao evacuar ou necessidade de acompanhamento preventivo.</p></div></div>
+        </div>
+        <div class="faq">
+          <button type="button" aria-expanded="false"><span>A consulta com coloproctologista é constrangedora?</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="faq-answer"><div><p>O atendimento é realizado com discrição, respeito e foco no bem-estar do paciente. Todas as etapas são explicadas de forma clara.</p></div></div>
+        </div>
+        <div class="faq">
+          <button type="button" aria-expanded="false"><span>Preciso de encaminhamento para marcar uma consulta?</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="faq-answer"><div><p>Isso pode variar conforme seu convênio ou modalidade de atendimento. Entre em contato para receber as orientações.</p></div></div>
+        </div>
+        <div class="faq">
+          <button type="button" aria-expanded="false"><span>A coloproctologista atende apenas casos cirúrgicos?</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="faq-answer"><div><p>Não. A especialidade também atua na prevenção, diagnóstico, acompanhamento clínico e orientação de diversas condições intestinais e anorretais.</p></div></div>
+        </div>
+        <div class="faq">
+          <button type="button" aria-expanded="false"><span>Quando devo iniciar a prevenção do câncer de intestino?</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="faq-answer"><div><p>A recomendação pode variar conforme idade, sintomas, histórico familiar e fatores de risco. Uma consulta médica é a melhor forma de receber orientação individualizada.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Depoimentos</p>
+          <h2 id="testimonials-title">Espaço reservado para experiências reais</h2>
+          <p class="lead">Esta seção deve apresentar somente relatos reais e previamente autorizados.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial"><span class="testimonial-mark" aria-hidden="true">“</span><p>Depoimento de paciente — inserir autorização e texto real</p><strong>Paciente identificado conforme autorização</strong></article>
+          <article class="testimonial"><span class="testimonial-mark" aria-hidden="true">“</span><p>Depoimento de paciente — inserir autorização e texto real</p><strong>Paciente identificado conforme autorização</strong></article>
+          <article class="testimonial"><span class="testimonial-mark" aria-hidden="true">“</span><p>Depoimento de paciente — inserir autorização e texto real</p><strong>Paciente identificado conforme autorização</strong></article>
+        </div>
+        <p class="admin-note">Para administração do site: utilizar apenas depoimentos reais, previamente autorizados, em conformidade com as normas éticas aplicáveis à publicidade médica.</p>
+      </div>
+    </section>
+
+    <section id="agendamento" class="section booking" aria-labelledby="booking-title">
+      <div class="container booking-grid">
+        <div>
+          <p class="eyebrow">Agendamento</p>
+          <h2 id="booking-title">Cuide da sua saúde com acolhimento e discrição</h2>
+          <p class="lead">Agende sua consulta com a Dra. Valéria Neves e receba uma avaliação individualizada.</p>
+          <a class="button button-light" data-track="whatsapp" target="_blank" rel="noopener" href="https://wa.me/55XXXXXXXXXXX?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Valéria%20Neves.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2A9.85 9.85 0 0 0 3.8 17.27L2 22l4.87-1.75A9.96 9.96 0 1 0 12.04 2Zm0 17.94a8.05 8.05 0 0 1-4.1-1.12l-.3-.18-2.9 1.04 1.05-2.82-.2-.3a8.04 8.04 0 1 1 6.45 3.38Z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <p class="booking-note">Atendimento em [Cidade/UF] • [Inserir modalidade: particular e/ou convênios]</p>
+        </div>
+
+        <form id="contact-form" class="form-card" novalidate>
+          <h3>Solicite um contato</h3>
+          <!-- Para funcionamento real, conecte este formulário a um backend, Formspree, Netlify Forms ou CRM. -->
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Nome</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="phone">Telefone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000" required />
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="best-time">Melhor horário para contato</label>
+              <select id="best-time" name="best-time" required>
+                <option value="">Selecione</option>
+                <option>Manhã</option>
+                <option>Tarde</option>
+                <option>Noite</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" placeholder="Conte, brevemente, como podemos ajudar."></textarea>
+            </div>
+            <label class="consent" for="consent">
+              <input id="consent" name="consent" type="checkbox" required />
+              <span>Autorizo o contato para retorno da minha solicitação de agendamento.</span>
+            </label>
+            <div class="field full">
+              <button class="button button-primary" type="submit">Enviar solicitação</button>
+              <div id="form-status" class="form-status" aria-live="polite"></div>
+            </div>
+          </div>
+          <p class="small muted" style="margin:15px 0 0;">Seus dados serão utilizados exclusivamente para retorno do contato e agendamento.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <strong>Dra. Valéria Neves</strong>
+          <p>Coloproctologia com acolhimento, discrição e informação clara para cada etapa do cuidado.</p>
+        </div>
+        <div>
+          <p class="footer-title">Informações profissionais</p>
+          <ul class="footer-list">
+            <li>CRM: [Inserir CRM/UF]</li>
+            <li>RQE: [Inserir RQE]</li>
+            <li>[Sociedades médicas, se aplicável]</li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Contato</p>
+          <ul class="footer-list">
+            <li><a href="tel:+55XXXXXXXXXXX">Telefone: [Inserir telefone]</a></li>
+            <li><a data-track="whatsapp" target="_blank" rel="noopener" href="https://wa.me/55XXXXXXXXXXX">WhatsApp: [Inserir WhatsApp]</a></li>
+            <li><a href="mailto:contato@exemplo.com">contato@[dominio].com</a></li>
+            <li><a target="_blank" rel="noopener" href="[INSERIR_LINK_INSTAGRAM]">Instagram: @[inserirperfil]</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Consultório</p>
+          <ul class="footer-list">
+            <li>[Inserir endereço completo]</li>
+            <li>[Cidade/UF]</li>
+            <li>Horários: [Inserir dias e horários]</li>
+            <li><a href="[INSERIR_LINK_POLITICA_PRIVACIDADE]">Política de Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Este site possui caráter informativo e não substitui consulta médica. Informações médicas devem ser avaliadas individualmente em consulta.</p>
+        <p>© <span id="year"></span> Dra. Valéria Neves. Todos os direitos reservados.</p>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
+  <!-- WhatsApp flutuante -->
+  <a class="whatsapp-float" data-track="whatsapp" target="_blank" rel="noopener" aria-label="Falar com a Dra. Valéria Neves pelo WhatsApp" href="https://wa.me/55XXXXXXXXXXX?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Valéria%20Neves.">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2A9.85 9.85 0 0 0 3.8 17.27L2 22l4.87-1.75A9.96 9.96 0 1 0 12.04 2Zm0 17.94a8.05 8.05 0 0 1-4.1-1.12l-.3-.18-2.9 1.04 1.05-2.82-.2-.3a8.04 8.04 0 1 1 6.45 3.38Z"/></svg>
+    <span>Falar pelo WhatsApp</span>
+  </a>
 
-<section class="section">
-  <div class="glass">
-    <h2>Sobre a médica</h2>
+  <script>
+    // CONFIGURAÇÃO: substitua todos os links wa.me/55XXXXXXXXXXX pelo WhatsApp definitivo.
+    // Rastreamento: integra com GTM/GA4 caso dataLayer ou gtag estejam carregados.
+    document.querySelectorAll('[data-track="whatsapp"]').forEach((element) => {
+      element.addEventListener('click', () => {
+        if (window.dataLayer) {
+          window.dataLayer.push({ event: 'whatsapp_click', source: element.closest('section')?.id || 'page' });
+        }
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'click', { event_category: 'contact', event_label: 'whatsapp' });
+        }
+      });
+    });
 
-    <div class="doctor">
-      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80">
+    // Menu responsivo
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('#nav-menu');
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      document.body.classList.toggle('menu-open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menu');
+    }));
 
-      <div>
-        <h3>Dra. Valéria Neves</h3>
-        <p><strong>CRM:</strong> 123456</p>
-        <p><strong>Especialidade:</strong> Clínica Geral</p>
+    // Acordeão de perguntas
+    document.querySelectorAll('.faq button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const opened = button.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq button').forEach(other => other.setAttribute('aria-expanded', 'false'));
+        button.setAttribute('aria-expanded', String(!opened));
+      });
+    });
 
-        <p>Médica com mais de 10 anos de experiência, focada em atendimento humanizado e diagnóstico preciso.</p>
-        <p>Atendimento presencial em Brasília e também online.</p>
-        <p>Cuidará do seu toba como ninguém.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    // Validação de formulário demonstrativa.
+    // Troque este bloco pela integração de envio com seu backend/CRM.
+    const form = document.querySelector('#contact-form');
+    const status = document.querySelector('#form-status');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      status.className = 'form-status';
 
+      if (!form.checkValidity()) {
+        status.classList.add('error');
+        status.textContent = 'Revise os campos obrigatórios antes de enviar.';
+        form.reportValidity();
+        return;
+      }
 
-<section class="section">
-  <h2>O que dizem os pacientes</h2>
+      if (window.dataLayer) window.dataLayer.push({ event: 'contact_form_submit' });
+      if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { event_category: 'contact_form' });
 
-  <div class="reviews">
-    <div class="review">⭐⭐⭐⭐⭐<br>“Excelente atendimento, recomendo muito!”</div>
-    <div class="review">⭐⭐⭐⭐⭐<br>“Consulta rápida e muito profissional.”</div>
-    <div class="review">⭐⭐⭐⭐⭐<br>“Fui muito bem atendido, voltarei com certeza.”</div>
-  </div>
-</section>
+      status.textContent = 'Solicitação validada. Conecte este formulário ao seu sistema de agendamento ou CRM para receber os dados.';
+      form.reset();
+    });
 
-
-<section class="section">
-  <h2>Perguntas Frequentes</h2>
-
-  <div class="faq-grid">
-
-    <div class="faq-card" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <span>📅 Como agendar uma consulta?</span>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        Você pode agendar rapidamente clicando no botão e falando diretamente via WhatsApp.
-      </div>
-    </div>
-
-    <div class="faq-card" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <span>🏥 Consulta é presencial ou online?</span>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        Realizamos atendimento presencial em Brasília e também consultas online.
-      </div>
-    </div>
-
-    <div class="faq-card" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <span>💰 Qual o valor da consulta?</span>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        Os valores variam conforme o tipo de atendimento. Consulte via WhatsApp.
-      </div>
-    </div>
-
-    <div class="faq-card" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <span>📄 Atende convênios?</span>
-        <span class="arrow"></span>
-      </div>
-      <div class="faq-answer">
-        Trabalhamos com atendimento particular. Consulte para mais detalhes.
-      </div>
-    </div>
-
-    <div class="faq-card" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <span>⚡ Atendimento é rápido?</span>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        Normalmente conseguimos encaixe no mesmo dia ou no dia seguinte.
-      </div>
-    </div>
-
-    <div class="faq-card" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <span>💻 Posso fazer consulta online?</span>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        Sim! Atendimento online com qualidade e segurança.
-      </div>
-    </div>
-
-    <div class="faq-card" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <span>🤝 Atendimento é humanizado?</span>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        Sim, focamos em escuta ativa e cuidado individualizado.
-      </div>
-    </div>
-
-    <div class="faq-card" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <span>📋 O que acontece após a consulta?</span>
-        <span class="arrow">+</span>
-      </div>
-      <div class="faq-answer">
-        Você recebe orientações completas e acompanhamento quando necessário.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="cta">
-    <h2>Agende sua consulta hoje mesmo</h2>
-    <p>Vagas limitadas</p>
-
-    <div class="countdown" id="timer">10:00</div>
-
-    <a class="btn" target="_blank"
-      href="https://wa.me/5561999999999?text=Olá%2C+quero+agendar+agora">
-      Falar agora
-    </a>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <p>Dra. Valéria Neves - Proctologista</p>
-  <p>© 2026 Due Marketing - Todos os direitos reservados</p>
-</footer>
-
-
-<a class="whatsapp-float" target="_blank"
- href="https://wa.me/5561999999999?text=Olá%2C+vim+pelo+site">
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
-<path fill="white" d="M16 .4C7.2.4.4 7.2.4 16c0 2.8.7 5.4 2 7.8L0 32l8.4-2.2c2.3 1.2 4.9 1.8 7.6 1.8z"/>
-</svg>
-
-</a>
-
-<script>
-function toggleFAQ(el){
-  const answer = el.querySelector('.faq-answer');
-  answer.style.display =
-    answer.style.display === 'block' ? 'none' : 'block';
-}
-
-let time=600;
-setInterval(()=>{
- let min=Math.floor(time/60);
- let sec=time%60;
- document.getElementById("timer").innerHTML=
- min+":"+(sec<10?"0"+sec:sec);
- if(time>0)time--;
-},1000);
-</script>
-
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
